@@ -1,70 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="utf-8">
-    <link href="./assets/css/panel.css" rel="stylesheet"> 
+    <link href="./assets/css/panel.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+    <script src="./assets/js/jquery.js" type="text/javascript"></script>
+    <script src="./assets/js/panel.js" type="text/javascript"></script>
+    <script src="./assets/js/search.js" type="text/javascript"></script>
 </head>
 
 <body>
+
     <div class="account">
-        <form id="form"></form>
-        <i class="icon-user"></i> <span id="head">Uitgelogd</span> <!-- 'Logged out' -->
-        <i class="icon-remove-sign" id="close" style="float:right; cursor:pointer;"></i>
+        <div class="pull-right">
+            <i data-link="help" class="icon-question-sign"></i>
+            <i data-link="settings" class="icon-cog"></i>
+            <i data-link="close" class="icon-remove-sign" id="close"></i>
+        </div>
+
+        <div>
+            <i class="icon-signout" data-link="logout"></i> emily.taylor33@hasalongdomain.com
+        </div>
     </div>
 
-    <div id="body">
-        <ul class="menu">
-            <li data-link="help">
-                <i class="icon-question-sign" id="help"></i>
-                Help
-            </li>
-            <li data-link="settings">
-                <i class="icon-cog" id="settings"></i>
-                Instellingen
-            </li>
-            <li data-link="logout">
-                <i class="icon-signout" id="logout"></i>
-                Uitloggen
-            </li>
-        </ul>
-    
-        <div class="widget availability" data-opened="false">
-            <div class="widget-header">
-                <h3><i class="icon-phone-sign"></i> Bereikbaarheid</h3> <!-- 'Availability' -->
-            </div>
-            <div class="widget-content">
-                <form>
-                    <strong>Ben je bereikbaar?</strong> <!-- 'Are you available?' -->
-                    <label>
-                        <input type="radio" name="availability" id="yes" value="yes" checked="checked" /> Ja 
-                    </label>
-                    <label>
-                        <input type="radio" name="availability" id="no" value="no" /> Nee 
-                    </label>
-                    <select id="statusupdate">
-                        <option>Je hebt momenteel geen bestemmingen.</option> <!-- 'You have no destinations at the moment.' -->
-                    </select>
+    <div class="widget bereikbaarheid" data-opened="true">
+        <div class="widget-header">
+            <h3><i class="icon-phone-sign"></i> Bereikbaarheid</h3>
+        </div>
+        <div class="widget-content">
+            <form>
+                <strong>Ben je bereikbaar?</strong>
+                <select>
+                    <option>Nee</option>
+                    <option selected="selected">+31633224433/Erik Mobiel</option>
+                    <option>+31507852851/Innovatio Vast</option>
+                </select>
+            </form>
+        </div>
+    </div>
+
+    <div class="widget hblf" data-opened="true">
+        <div class="widget-header">
+            <h3>
+                <i class="icon-phone-sign"></i> Collega's
+                <form class="form-search">
+                    <input name="search" type="search" class="search-query" />
+                    <i class="icon-search"></i>
                 </form>
-            </div>
+            </h3>
         </div>
-    
-        <div class="widget queues" data-opened="false">
-            <div class="widget-header">
-                <h3><i class="icon-time"></i> Wachtrijen</h3> <!-- 'Queues' -->
-            </div>
-            <div class="widget-content" id="queue">
-                <ul>
-                </ul>
-            </div>        
+        <div class="widget-content">
+            <ul>
+                <li class="contact">
+                    <div class="status-icon available">
+                        <i class="icon-phone-sign"></i>
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                            Ethan Cook
+                        </div>
+                        <div class="extension">
+                            403
+                        </div>
+                    </div>
+                </li>
+                <li class="contact">
+                    <div class="status-icon busy">
+                        <i class="icon-phone-sign "></i>
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                            Amy Alexander
+                        </div>
+                        <div class="extension">
+                            404
+                        </div>
+                    </div>
+                </li>
+                <li class="contact">
+                    <div class="status-icon available">
+                        <i class="icon-phone-sign"></i>
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                            Ethan Wood
+                        </div>
+                        <div class="extension">
+                            405
+                        </div>
+                    </div>
+                </li>
+                <li class="contact">
+                    <div class="status-icon available">
+                        <i class="icon-phone-sign"></i>
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                            Meghan Alexander
+                        </div>
+                        <div class="extension">
+                            406
+                        </div>
+                    </div>
+                </li>
+                <li class="contact">
+                    <div class="status-icon busy">
+                        <i class="icon-phone-sign"></i>
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                            Raymond Mitchelle
+                        </div>
+                        <div class="extension">
+                            407
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-    
     </div>
 
-    <!--<footer>
-        versie 1.0
-    </footer>-->
+    <div class="widget wachtrijen" data-opened="true">
+        <div class="widget-header">
+            <h3><i class="icon-time"></i> Wachtrijen</h3>
+        </div>
+        <div class="widget-content">
+            <ul>
+                <li><span class="indicator">99</span> Financiën <span class="code">(403)</span> </li>
+                <li><span class="indicator">14</span> Marketing <span class="code">(403)</span> </li>
+                <li><span class="indicator">11</span> ICT <span class="code">(403)</span> </li>
+                <li><span class="indicator">8</span> Verkoop <span class="code">(403)</span> </li>
+                <li><span class="indicator">5</span> Inkoop <span class="code">(403)</span> </li>
+            </ul>
+        </div>
+    </div>
 </body>
- 
+
 </html>

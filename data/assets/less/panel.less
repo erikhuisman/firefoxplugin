@@ -27,13 +27,15 @@ body {
     font: 13px/1.7em 'Open Sans';
 }
 
+.pull-right {
+    text-align: right;
+}
+
 div.account {
     padding: 10px;
     i {
-        display: block;
-        float: left;
+        cursor: pointer;
         font-size: 21px;
-
         margin-right: 9px;
         margin-left: 2px;
     }
@@ -42,9 +44,10 @@ div.account {
 // include parts of the panel
 @import "menu";
 @import "widget";
+@import "hblf";
 
 footer {
-    
+
     font-size: 12px;
 
     height: 35px;
